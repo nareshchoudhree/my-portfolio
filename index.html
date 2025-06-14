@@ -30,30 +30,20 @@
             font-family: 'Paytone One', sans-serif;
         }
         
-        .navbar {
-            background-color: var(--dark-color) !important;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
+        /* Navigation Styles */
+        nav {
+            background-color: var(--dark-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
             top: 0;
             z-index: 1000;
             transition: all 0.3s ease;
         }
         
-        .navbar.scrolled {
-            background-color: rgba(0, 0, 0, 0.9) !important;
-            padding: 10px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .navbar-brand, .nav-link {
-            color: var(--light-color) !important;
-            transition: all 0.3s ease;
-        }
-        
         .nav-link {
-            margin: 0 10px;
             position: relative;
+            color: var(--light-color) !important;
+            transition: color 0.3s ease;
         }
         
         .nav-link::after {
@@ -61,13 +51,21 @@
             position: absolute;
             width: 0;
             height: 2px;
-            background: var(--primary-color);
-            bottom: 0;
+            bottom: -2px;
             left: 0;
+            background-color: var(--primary-color);
             transition: width 0.3s ease;
         }
         
         .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .active-nav::after {
             width: 100%;
         }
         
@@ -262,7 +260,7 @@
         }
         
         .form-control {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgb(255, 254, 254);
             border: none;
             color: var(--light-color);
             padding: 15px;
@@ -271,9 +269,9 @@
         }
         
         .form-control:focus {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgb(0, 0, 0);
             color: var(--light-color);
-            box-shadow: 0 0 0 0.25rem rgba(228, 1, 95, 0.25);
+            box-shadow: 0 0 0 0.25rem rgb(255, 255, 255);
         }
         
         .social-links .icons a {
@@ -411,187 +409,175 @@
                 font-size: 14px;
             }
         }
-        /* Default styles for larger screens */
-.social-links {
-    text-align: center; /* Center the entire social-links container */
-}
-
-.social-links h6 {
-    text-align: center; /* Ensure "Find Me On" is centered */
-}
-
-.social-links .icons {
-    justify-content: center; /* Center the flex container (icons) */
-}
-
-/* Media query for mobile view (adjust max-width as needed) */
-@media (max-width: 768px) {
-    .social-links {
-        text-align: center; /* Ensure container stays centered */
-    }
-
-    .social-links h6 {
-        text-align: center; /* Keep "Find Me On" centered */
-    }
-
-    .social-links .icons {
-        display: flex;
-        justify-content: center; /* Center icons horizontally */
-        gap: 1rem; /* Optional: Add spacing between icons */
-    }
-
-    .social-links .icons a {
-        margin: 0; /* Remove any default margins that might offset icons */
-    }
-}
-/* Default styles for larger screens */
-.d-flex.flex-wrap.gap-3 {
-    justify-content: center; /* Center the buttons horizontally */
-}
-
-/* Media query for mobile view (adjust max-width as needed) */
-@media (max-width: 768px) {
-    .d-flex.flex-wrap.gap-3 {
-        justify-content: center; /* Ensure buttons stay centered in mobile view */
-        gap: 1rem; /* Maintain consistent spacing between buttons */
-    }
-
-    .d-flex.flex-wrap.gap-3 a.btn {
-        margin: 0; /* Remove any default margins that might offset buttons */
-    }
-}
-/* Default styles for larger screens */
-.col-lg-6.text-center {
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    
-}
-
-
-/* Media query for mobile view (adjust max-width as needed) */
-@media (max-width: 768px) {
-    .col-lg-6.text-center {
-        display: flex;
-        justify-content: center; /* Ensure image is centered in mobile view */
         
-    }
-
-    
-}
-/* Default styles for larger screens */
-h1.mb-3.text-center {
-    font-size: 1.5rem; /* Increase font size (adjust as needed, e.g., 3.5rem, 4rem) */
-}
-
-/* Media query for mobile view (adjust max-width as needed) */
-@media (max-width: 768px) {
-    h1.mb-3.text-center {
-        font-size: 1.5rem; /* Slightly smaller for mobile to ensure readability */
-    }
-}
-/* Default styles for all screens (including large devices) */
-.mt-4 {
-    display: flex;
-    justify-content: center; /* Center the button horizontally */
-}
-
-/* Media query for mobile view (ensure centering on small screens) */
-@media (max-width: 768px) {
-    .mt-4 {
-        display: flex;
-        justify-content: center; /* Ensure button stays centered */
-    }
-
-    .mt-4 a.btn {
-        margin: 0; /* Remove any default margins that might offset the button */
-    }
-}
-/* Default styles for all screens (including large devices) */
-h2.section-title {
-    font-size: 2.5rem; /* Increase font size (adjust as needed, e.g., 3rem, 3.5rem) */
-}
-
-/* Media query for mobile view (ensure readability on small screens) */
-@media (max-width: 768px) {
-    h2.section-title {
-        font-size: 2rem; /* Slightly smaller for mobile (adjust as needed, e.g., 1.8rem) */
-    }
-}
-/* Navigation Background and Size */
-#navbar {
-    background-color: #1a1a1a; /* Keep existing background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Keep optional shadow */
-}
-
-/* Reduce padding to make nav smaller */
-#navbar .container {
-    padding-top: 0.2rem; /* Reduced from py-4 (1rem) to 0.5rem */
-    padding-bottom: 0.2rem; /* Reduced from py-4 (1rem) to 0.5rem */
-}
-
-/* Optional: Adjust font size of nav links for a more compact look */
-#navbar .text-2xl {
-    font-size: 1.25rem; /* Reduced from 2xl (1.5rem instead of 2rem) */
-}
-
-#navbar .nav-link {
-    font-size: 1rem; /* Optional: Smaller font for nav links */
-}
-
-/* Mobile menu background */
-#mobile-menu {
-    background-color: #ffffff; /* Keep existing white background */
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    #navbar {
-        background-color: #1a1a1a; /* Consistent background */
-    }
-
-    #navbar .container {
-        padding-top: 0.2rem; /* Consistent reduced padding */
-        padding-bottom: 0.2rem;
-    }
-
-    #navbar .text-2xl {
-        font-size: 1.25rem; /* Slightly smaller for mobile */
-    }
-
-    #mobile-menu {
-        padding-top: 0.2rem; /* Reduce mobile menu padding */
-        padding-bottom: 0.2rem;
-    }
-}
+        /* Social Links Centering */
+        .social-links {
+            text-align: center;
+        }
+        
+        .social-links h6 {
+            text-align: center;
+        }
+        
+        .social-links .icons {
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .social-links {
+                text-align: center;
+            }
+            
+            .social-links h6 {
+                text-align: center;
+            }
+            
+            .social-links .icons {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .social-links .icons a {
+                margin: 0;
+            }
+        }
+        
+        /* Button Centering */
+        .d-flex.flex-wrap.gap-3 {
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .d-flex.flex-wrap.gap-3 {
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .d-flex.flex-wrap.gap-3 a.btn {
+                margin: 0;
+            }
+        }
+        
+        /* Image Centering */
+        .col-lg-6.text-center {
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .col-lg-6.text-center {
+                display: flex;
+                justify-content: center;
+            }
+        }
+        
+        /* Title Font Size */
+        h1.mb-3.text-center {
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1.mb-3.text-center {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Download Button Centering */
+        .mt-4 {
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .mt-4 {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .mt-4 a.btn {
+                margin: 0;
+            }
+        }
+        
+        /* Section Title Font Size */
+        h2.section-title {
+            font-size: 2.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            h2.section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Navigation Size */
+        nav .container {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        nav .text-2xl {
+            font-size: 1.25rem;
+        }
+        
+        nav .nav-link {
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav .container {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+            
+            nav .text-2xl {
+                font-size: 1.25rem;
+            }
+            
+            #mobile-menu {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-white">Naresh<span class="gradient-text-white"> Choudhary</span></a>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-white">Home</a>
-                    <a href="#about" class="nav-link text-white">About</a>
-                    <a href="#services" class="nav-link text-white">Services</a>
-                    <a href="#projects" class="nav-link text-white">Projects</a>
-                    <a href="#contact" class="nav-link text-white">Contact</a>
+    <nav class="bg-black shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-code text-3xl text-pink-600 mr-2"></i>
+                        <a href="#home" class="text-2xl font-bold text-white">Naresh<span class="text-pink-600"> Choudhary</span></a>
+                    </div>
                 </div>
-                
-                <button class="md:hidden text-white focus:outline-none" id="menu-btn">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="nav-link active-nav text-white px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="nav-link text-white px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#services" class="nav-link text-white px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="#projects" class="nav-link text-white px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="#contact" class="nav-link text-white px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-pink-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div class="md:hidden hidden bg-white rounded-lg mt-4 py-2 px-4" id="mobile-menu">
-                <a href="#home" class="block py-2 text-gray-800 hover:text-purple-600">Home</a>
-                <a href="#about" class="block py-2 text-gray-800 hover:text-purple-600">About</a>
-                <a href="#services" class="block py-2 text-gray-800 hover:text-purple-600">Services</a>
-                <a href="#projects" class="block py-2 text-gray-800 hover:text-purple-600">Projects</a>
-                <a href="#contact" class="block py-2 text-gray-800 hover:text-purple-600">Contact</a>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-pink-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-pink-600">About</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-pink-600">Services</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-pink-600">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-pink-600">Contact</a>
             </div>
         </div>
     </nav>
@@ -603,32 +589,32 @@ h2.section-title {
                 <!-- Text on Left -->
                 <div class="col-lg-6">
                     <h1 class="mb-3 text-center"> <br> Naresh Choudhary</h1>
-                    <h2 class="title-text" id="typing-text"></h2>
-                    <p class="mb-4">I'm Naresh Choudhary, a passionate Full Stack Web Developer skilled in HTML, CSS, JavaScript, React, Node.js, and more. I craft responsive, user-friendly websites and applications, blending creativity with technical expertise. My portfolio showcases innovative projects, reflecting my commitment to excellence, problem-solving, and delivering impactful digital solutions.</p>
+                    <h2 class="title-text text-center" id="typing-text"></h2>
+                    <p class="mb-4 text-center">I'm Naresh Choudhary, a passionate Full Stack Web Developer skilled in HTML, CSS, JavaScript, React, Node.js, and more. I craft responsive, user-friendly websites and applications, blending creativity with technical expertise. My portfolio showcases innovative projects, reflecting my commitment to excellence, problem-solving, and delivering impactful digital solutions.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#contact" class="btn btn-custom">Hire Me <i class="fas fa-arrow-right ms-2"></i></a>
                         <a href="#projects" class="btn btn-custom">View Projects <i class="fas fa-eye ms-2"></i></a>
                     </div>
                     <div class="social-links mt-5">
-                            <h5 class="mb-3">Follow Me</h5>
-                            <div class="icons d-flex">
-                                <a href="https://instagram.com/naresh.choudhree" target="_blank" class="me-3">
-                                    <i class="fab fa-instagram fa-lg"></i>
-                                </a>
-                                <a href="https://www.facebook.com/nareshkumar.deepla" target="_blank" class="me-3">
-                                    <i class="fab fa-facebook-f fa-lg"></i>
-                                </a>
-                                <a href="https://x.com/nareshchoudhree?t=tjdLpFiX1S8ICaVcgPSG7g&s=09" target="_blank" class="me-3">
-                                    <i class="fab fa-twitter fa-lg"></i>
-                                </a>
-                                <a href="https://wa.me/6378842182" target="_blank" class="me-3">
-                                    <i class="fab fa-whatsapp fa-lg"></i>
-                                </a>
-                                <a href="https://github.com/nareshchoudhree" target="_blank">
-                                    <i class="fab fa-github fa-lg"></i>
-                                </a>
-                            </div>
+                        <h5 class="mb-3">Follow Me</h5>
+                        <div class="icons d-flex">
+                            <a href="https://instagram.com/naresh.choudhree" target="_blank" class="me-3">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                            <a href="https://www.facebook.com/nareshkumar.deepla" target="_blank" class="me-3">
+                                <i class="fab fa-facebook-f fa-lg"></i>
+                            </a>
+                            <a href="https://x.com/nareshchoudhree?t=tjdLpFiX1S8ICaVcgPSG7g&s=09" target="_blank" class="me-3">
+                                <i class="fab fa-twitter fa-lg"></i>
+                            </a>
+                            <a href="https://wa.me/6378842182" target="_blank" class="me-3">
+                                <i class="fab fa-whatsapp fa-lg"></i>
+                            </a>
+                            <a href="https://github.com/nareshchoudhree" target="_blank">
+                                <i class="fab fa-github fa-lg"></i>
+                            </a>
                         </div>
+                    </div>
                     <div class="mt-4">
                         <a href="my resume .pdf" class="btn btn-custom" download>
                             Download Resume <i class="fas fa-download ms-2"></i>
@@ -1025,7 +1011,7 @@ h2.section-title {
     <!-- Footer -->
     <footer class="py-4 bg-dark text-center">
         <div class="container">
-            <p class="mb-0">&copy; 2025 Naresh Choudhary. All Rights Reserved.</p>
+            <p class="mb-0">© 2025 Naresh Choudhary. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -1033,7 +1019,6 @@ h2.section-title {
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
-    
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1045,22 +1030,30 @@ h2.section-title {
             emailjs.init("ZmDeZCBPYPjKPeePA"); // Replace with your EmailJS Public Key
         })();
 
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
         // Typing Effect
-const text = "Froentend Web Developer";
-const typingElement = document.getElementById("typing-text");
-let index = 0;
+        const text = "Frontend Web Developer";
+        const typingElement = document.getElementById("typing-text");
+        let index = 0;
 
-function type() {
-    const currentText = text.substring(0, index);
-    typingElement.textContent = currentText;
-    
-    if (index < text.length) {
-        index++;
-        setTimeout(type, 100);
-    }
-}
+        function type() {
+            const currentText = text.substring(0, index);
+            typingElement.textContent = currentText;
+            
+            if (index < text.length) {
+                index++;
+                setTimeout(type, 100);
+            }
+        }
 
-type();
+        type();
 
         // Start typing effect when the page loads
         window.onload = function() {
@@ -1131,19 +1124,15 @@ type();
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
                 });
             });
             
             // Navbar scroll effect
             window.addEventListener('scroll', function() {
-                const navbar = document.querySelector('.navbar');
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-                
-                // Back to top button
                 const backToTop = document.querySelector('.back-to-top');
                 if (window.scrollY > 300) {
                     backToTop.classList.add('active');
@@ -1187,7 +1176,6 @@ type();
             // Run once on page load
             animateOnScroll();
         };
-        
     </script>
 </body>
 </html>
